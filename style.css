@@ -1,0 +1,163 @@
+:root {
+    --colore-bg: deepskyblue;
+    --colore-testo: black;
+    --colore-primario: rgb(29, 227, 253);
+    --colore-secondario: rgb(0, 255, 255);
+    --colore-hover: rgb(50, 167, 50);
+    --colore-card: rgb(21, 194, 247);
+}
+
+body.dark {
+    --colore-bg: black;
+    --colore-testo: white;
+    --colore-card: rgb(252, 30, 30);
+    background-color: aliceblue;
+    color: var(--colore-testo)
+}
+
+/* Reset CSS: cancella margin e padding di tutti gli elementi */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Imposta overflow-x a hidden per evitare lo scorrimento orizzontale */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Imposta la famiglia di caratteri, il colore di sfondo e l'altezza del body */
+body {
+    font-family: sans-serif;
+    background-color: var(--colore-bg);
+    color: var(--colore-testo);
+}
+
+/* Imposta lo stile dell'header */
+header {
+    background-color:var(--colore-primario);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+/* Imposta lo stile del main */
+main {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Imposta lo stile del footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--colore-primario);
+}
+
+/* Imposta lo stile dei link */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Imposta lo stile della nav */
+nav {
+    box-shadow: turquoise 0 0 10px;
+    display: flex;
+}
+
+/* Imposta lo stile dell'elenco della nav */
+nav ul {
+    margin-top: 0;
+}
+
+/* Imposta lo stile degli elementi dell'elenco della nav */
+nav ul li {
+    display: inline-block;
+    margin: 20px;
+    list-style: none;
+}
+
+.fa-solid { 
+    cursor: pointer;
+    margin-left: auto;
+    margin-right : 20px;
+    align-content: center;
+    font-size: 1.5rem;
+
+}
+
+/* Imposta lo stile delle sezioni */
+section {
+    margin: 40px;
+}
+
+/* Imposta lo stile del primo elemento del main */
+main > div:first-child {
+    margin-top: 58px;
+}
+
+.nome {
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+/* Imposta lo stile dell'immagine all'interno del primo elemento del main */
+main > div:first-child img {
+    border-radius: 100px;
+}
+
+/* Imposta lo stile del paragrafo all'interno della classe box */
+.descrizione p {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    
+}
+
+/* Imposta lo stile della classe progetti */
+.progetti {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 10px;
+}
+
+/* Imposta lo stile degli elementi all'interno della classe progetti */
+.progetti div {
+    background-color: var(--colore-primario);
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    border-radius: 80px;
+    padding: 10px;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s all ease-in-out;
+}
+
+.progetti div:hover {
+    background-color: var(--colore-secondario);
+    transform:  scale(1.02);
+}
+
+.progetti div:nth-child{
+    text-align: center;
+}
+
+
+@media screen and (max-width: 600px) {
+    .progetti div {
+        width: 100%;
+    }
+
+    .descrizione p {
+        width: 100%;
+    }
+    
+}
