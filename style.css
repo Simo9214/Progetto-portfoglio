@@ -1,6 +1,7 @@
 :root {
     --colore-bg: deepskyblue;
     --colore-testo: black;
+    --colore-testo-scuro: black;
     --colore-primario: rgb(29, 227, 253);
     --colore-secondario: rgb(0, 255, 255);
     --colore-hover: rgb(50, 167, 50);
@@ -11,7 +12,7 @@ body.dark {
     --colore-bg: black;
     --colore-testo: white;
     --colore-card: rgb(252, 30, 30);
-    background-color: aliceblue;
+    background-color: var(--colore-bg);
     color: var(--colore-testo)
 }
 
@@ -23,7 +24,8 @@ body.dark {
 }
 
 /* Imposta overflow-x a hidden per evitare lo scorrimento orizzontale */
-html, body {
+html,
+body {
     overflow-x: hidden;
 }
 
@@ -36,7 +38,7 @@ body {
 
 /* Imposta lo stile dell'header */
 header {
-    background-color:var(--colore-primario);
+    background-color: var(--colore-primario);
     width: 100%;
     position: fixed;
     top: 0;
@@ -51,6 +53,7 @@ main {
 
 /* Imposta lo stile del footer */
 footer {
+    color: var(--colore-testo-scuro);
     text-align: center;
     padding: 10px;
     background-color: var(--colore-primario);
@@ -64,6 +67,7 @@ a {
 
 /* Imposta lo stile della nav */
 nav {
+    color: var(--colore-testo-scuro );
     box-shadow: turquoise 0 0 10px;
     display: flex;
 }
@@ -80,10 +84,10 @@ nav ul li {
     list-style: none;
 }
 
-.fa-solid { 
+.fa-solid {
     cursor: pointer;
     margin-left: auto;
-    margin-right : 20px;
+    margin-right: 20px;
     align-content: center;
     font-size: 1.5rem;
 
@@ -95,7 +99,7 @@ section {
 }
 
 /* Imposta lo stile del primo elemento del main */
-main > div:first-child {
+main>div:first-child {
     margin-top: 58px;
 }
 
@@ -105,7 +109,7 @@ main > div:first-child {
 }
 
 /* Imposta lo stile dell'immagine all'interno del primo elemento del main */
-main > div:first-child img {
+main>div:first-child img {
     border-radius: 100px;
 }
 
@@ -114,7 +118,7 @@ main > div:first-child img {
     text-align: center;
     width: 50%;
     margin: 0 auto;
-    
+
 }
 
 /* Imposta lo stile della classe progetti */
@@ -124,11 +128,13 @@ main > div:first-child img {
     width: 100%;
     justify-content: space-around;
     gap: 10px;
-    padding: 10px;
+    padding: 20px;
+
 }
 
 /* Imposta lo stile degli elementi all'interno della classe progetti */
 .progetti div {
+    color: var(--colore-testo-scuro);
     background-color: var(--colore-primario);
     display: flex;
     flex-direction: column;
@@ -141,14 +147,73 @@ main > div:first-child img {
     transition: 0.3s all ease-in-out;
 }
 
-.progetti div:hover {
-    background-color: var(--colore-secondario);
-    transform:  scale(1.02);
+.progetti div a {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.progetti div:nth-child{
+.progetti div:hover {
+    background-color: var(--colore-secondario);
+    transform: scale(1.02);
+}
+
+.progetti div:nth-child {
     text-align: center;
 }
+
+
+/* Imposta lo stile della To-do-list */
+
+.to-do-list {
+    display: flex;
+    justify-content: center;
+    /* centra orizzontalmente */
+    align-items: center;
+    /* centra verticalmente */
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    margin-top: 68px;
+
+}
+
+#addTask {
+    background-color: var(--colore-primario);
+    border: solid 1px black;
+    border-radius: 80px;
+    padding: 10px;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s all ease-in-out;
+
+}
+
+#addTask:hover {
+    background-color: var(--colore-secondario);
+    transform: scale(1.02);
+}
+
+#newTask {
+    border-radius: 80px;
+    padding: 10px;
+    width: 30%;
+}
+
+
+
+#taskList li {
+    color: var(--colore-testo-scuro);
+    list-style: none;
+    border: solid 1px black;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--colore-primario);
+    cursor: pointer;
+}
+
 
 
 @media screen and (max-width: 600px) {
@@ -159,5 +224,5 @@ main > div:first-child img {
     .descrizione p {
         width: 100%;
     }
-    
+
 }
